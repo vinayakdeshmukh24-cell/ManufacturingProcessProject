@@ -9,26 +9,15 @@ This is a web application that predicts machining time based on various paramete
 pip install -r requirements.txt
 ```
 
-2. Download the pre-trained model files:
-   - Download `machining_model.joblib` and `scaler.joblib` from the [latest release](https://github.com/vinayakdeshmukh24-cell/ManufacturingProcessProject/releases/latest)
-   - Place these files in the project root directory
+2. Generate the dataset and train the model:
+```bash
+python generate_data.py  # Generate the training dataset
+python train.py         # Train and save the model
+```
 
 3. Run the web application:
 ```bash
 streamlit run app.py
-```
-
-## Training Your Own Model (Optional)
-
-If you want to train your own model:
-1. Generate the dataset:
-```bash
-python generate_data.py
-```
-
-2. Train the model:
-```bash
-python train.py
 ```
 
 ## Features
@@ -49,5 +38,23 @@ python train.py
 
 The application uses a Random Forest Regressor to predict machining time based on the input parameters. The model is trained on a synthetic dataset that simulates realistic machining conditions.
 
-## Large Files
-The model files (`machining_model.joblib` and `scaler.joblib`) are not included in the repository due to size constraints. Please download them from the releases section.
+## Important Notes
+
+The trained model files (`machining_model.joblib` and `scaler.joblib`) are not included in the repository due to size limitations. You need to generate them locally:
+
+1. First generate the dataset:
+```bash
+python generate_data.py
+```
+
+2. Then train the model:
+```bash
+python train.py
+```
+
+This will create all necessary files:
+- `machining_time_dataset.csv`: Training data
+- `machining_model.joblib`: Trained model
+- `scaler.joblib`: Feature scaler
+
+These files are automatically ignored by git as they are either too large or can be regenerated.
