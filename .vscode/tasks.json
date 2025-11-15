@@ -1,0 +1,32 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Install dependencies",
+      "type": "shell",
+      "command": "& \"${workspaceFolder}\\.venv\\Scripts\\python.exe\" -m pip install -r ${workspaceFolder}\\requirements.txt",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Streamlit Logic App",
+      "type": "process",
+      "command": "& \"${workspaceFolder}\\.venv\\Scripts\\python.exe\" -m streamlit run ${workspaceFolder}\\streamlit_logic_app.py",
+      "problemMatcher": [],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Open Logic App in Browser",
+      "type": "shell",
+      "command": "start http://localhost:8501",
+      "problemMatcher": []
+    }
+  ]
+}
