@@ -28,5 +28,17 @@
       "command": "start http://localhost:8501",
       "problemMatcher": []
     }
+    ,
+    {
+      "label": "Run Flask Logic App",
+      "type": "process",
+      "command": "& \"${workspaceFolder}\\.venv\\Scripts\\python.exe\" ${workspaceFolder}\\flask_logic_app.py",
+      "problemMatcher": [],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "shared"
+      }
+    }
   ]
 }

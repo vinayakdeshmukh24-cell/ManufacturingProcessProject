@@ -10,5 +10,14 @@
       "justMyCode": true,
       "env": {}
     }
+    ,
+    {
+      "name": "Run Flask (logic app)",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/flask_logic_app.py",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    }
   ]
 }
